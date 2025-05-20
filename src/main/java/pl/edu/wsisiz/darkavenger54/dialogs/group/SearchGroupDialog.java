@@ -9,9 +9,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
 
-/**
- * @author Zhenia
- */
+
 public class SearchGroupDialog extends JDialog {
     public SearchGroupDialog(Window owner) {
         super(owner);

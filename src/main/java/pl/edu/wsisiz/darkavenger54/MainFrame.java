@@ -17,9 +17,6 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
 
-/**
- * @author Zhenia
- */
 public class MainFrame extends JFrame {
     private StudentRecord studentRecord;
     private GroupRecord groupRecord;

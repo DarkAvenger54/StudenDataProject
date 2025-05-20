@@ -15,9 +15,7 @@ import javax.swing.GroupLayout;
 import javax.swing.border.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
- * @author Zhenia
- */
+
 public class EditSubjectDialog extends JDialog {
     private Subject subject;
     private StudentRecord studentRecord;

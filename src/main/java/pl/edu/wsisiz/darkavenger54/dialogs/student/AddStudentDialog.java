@@ -12,9 +12,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
 
-/**
- * @author Zhenia
- */
+
 public class AddStudentDialog extends JDialog {
     private boolean isConfirmed = false;
     private String sname;

@@ -14,9 +14,7 @@ import javax.swing.GroupLayout;
 import javax.swing.border.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
- * @author Zhenia
- */
+
 public class EditGroupDialog extends JDialog {
     private StudentRecord studentRecord;
     private Group group;

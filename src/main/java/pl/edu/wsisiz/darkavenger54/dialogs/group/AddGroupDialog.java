@@ -12,9 +12,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
 
-/**
- * @author Zhenia
- */
+
 public class AddGroupDialog extends JDialog {
     private boolean confirmed = false;
     private String groupID;
