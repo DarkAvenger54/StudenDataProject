@@ -1,0 +1,140 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :::p, par l {seq {comp scrollPane1::::556:x, space :::p}, comp panel1::l:::x, comp panel2::t::566:x}}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :::p, comp panel2:::p::p, space :::p, comp scrollPane1::::113:x, space :::p}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :::p, par l:::p {seq {comp label12:::p::p, space s:::p, comp groupTextField:::::x}, seq l {comp label5:::p::p, space s:::p, comp albumTextField:::p:121:p}, comp label1:::p:50:p, seq l {par l {comp label4::l:p::p, comp label2::l:p::p}, space :::p, par l:::p {comp nameTextField::::120:x, comp surnameTextField::::120:x}}}, space ::311:x, comp updateButton:::p::p, space :::p}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp label1:::p::p, space :::p, par b {comp label2::b:p::p, comp nameTextField::b:p::p}, space :::p, par b {comp label4::b:p::p, comp surnameTextField::b:p::p}, space :::p, par b {comp label5::b:p::p, comp albumTextField::b:p::p}, space :::p, par b {comp label12::b:p::p, comp groupTextField::b:p::p, comp updateButton::b:p::p}, space ::11:x}}"
+					} ) {
+						name: "panel1"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label1"
+							"text": "Info"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label2"
+							"text": "Name"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label4"
+							"text": "Surname"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label5"
+							"text": "Album"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label12"
+							"text": "Group"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "surnameTextField"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "nameTextField"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "albumTextField"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "groupTextField"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "updateButton"
+							"text": "Update"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "update", true ) )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "subjectsTable"
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :::p, comp label9:::p::p, space :::p, comp subjectTextField:::p:105:p, space :::p, comp addSubjectButton:::p::p, space :::p, comp label10:::p::p, space :::p, comp topicTextField:::p:105:p, space :::p, comp label11:::p::p, space :::p, comp gradeTextField:::p:40:p, space :::p, comp addGradebutton:::p::p, space :::x}}"
+						"$verticalGroup": "par l {seq l {space :::p, par b {comp label9::b:p::p, comp subjectTextField::b:p::p, comp addSubjectButton::b:p::p, comp label10::b:p::p, comp topicTextField::b:p::p, comp label11::b:p::p, comp gradeTextField::b:p::p, comp addGradebutton::b:p::p}, space ::26:x}}"
+					} ) {
+						name: "panel2"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label9"
+							"text": "Subject"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "subjectTextField"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "addSubjectButton"
+							"text": "Add Subject"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addSubject", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label10"
+							"text": "Topic"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "topicTextField"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label11"
+							"text": "Grade"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "gradeTextField"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "addGradebutton"
+							"text": "Add Grade"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addGrade", true ) )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 80, 80"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+				} ) {
+					name: "buttonBar"
+					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "OK"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ok", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 0
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Cancel"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancel", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 595, 435 )
+		} )
+	}
+}

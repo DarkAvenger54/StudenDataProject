@@ -1,0 +1,124 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :::p, par l {comp panel1::l:::x, comp panel2::l:::x}, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :::p, comp panel2:::::x, space :p:11:p}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {comp scrollPane1:::p:400:p, space ::65:x, comp updateButton:::p::p}, seq {par l {comp label3::l:p::p, seq l {par l {comp label2::l:p::p, comp label1::l:p::p}, space :::p, par l:::p {comp specializationTextField::::100:x, comp groupIDTextField::::100:x}}}, space :0:362:x}}, space :::p}}"
+						"$verticalGroup": "par l {seq t {space :::p, par t {seq {space :0:116:x, comp updateButton:::p::p}, seq {par b {comp label1::b:p::p, comp groupIDTextField::b:p::p}, space :::p, par b {comp label2::b:p::p, comp specializationTextField::b:p::p}, space :::p, comp label3:::p::p, space :::p, comp scrollPane1::::67:x}}, space :::p}}"
+					} ) {
+						name: "panel1"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label1"
+							"text": "GroupID"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label2"
+							"text": "Specialization"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label3"
+							"text": "Description:"
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane1"
+							add( new FormComponent( "javax.swing.JTextPane" ) {
+								name: "descriptionTextPane"
+							} )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "specializationTextField"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "groupIDTextField"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "updateButton"
+							"text": "Update"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "update", true ) )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane2::::534:x, seq {comp panel3:::p::p, space :0:128:x}}}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp panel3:::p::p, space :::p, comp scrollPane2::::113:x, space :::p}}"
+					} ) {
+						name: "panel2"
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+							"$horizontalGroup": "par l {seq l {space :::p, comp label4:::p::p, space :::p, comp albumTextField:::p:100:p, space :::p, comp addButton:::p::p, space :::p, comp deleteButton:::p::p, space ::12:x}}"
+							"$verticalGroup": "par l {seq l {space :::p, par b {comp label4::b:p::p, comp albumTextField::b:p::p, comp addButton::b:p::p, comp deleteButton::b:p::p}, space ::26:x}}"
+						} ) {
+							name: "panel3"
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "label4"
+								"text": "Student Album"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "albumTextField"
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "addButton"
+								"text": "Add Student"
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "add", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "deleteButton"
+								"text": "Delete Student"
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "delete", true ) )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane2"
+							add( new FormComponent( "javax.swing.JTable" ) {
+								name: "studentTable"
+							} )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 80, 80"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+				} ) {
+					name: "buttonBar"
+					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "OK"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ok", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 0
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Cancel"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancel", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 590, 470 )
+		} )
+	}
+}
