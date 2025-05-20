@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"pl.edu.wsisiz.darkavenger54"},{"l":"pl.edu.wsisiz.darkavenger54.dialogs.group"},{"l":"pl.edu.wsisiz.darkavenger54.dialogs.student"},{"l":"pl.edu.wsisiz.darkavenger54.dialogs.subject"}]

@@ -77,11 +77,6 @@ public class MainFrame extends JFrame {
         {
             studentsTable.getColumnModel().getColumn(i).setResizable(false);
         }
-
-        for (int i = 0; i < 100; ++i)
-        {
-            studentRecord.addStudent(new Student("Tyler", "Durden", Integer.toString(i)));
-        }
         update();
     }
     private void update()
@@ -290,7 +285,6 @@ public class MainFrame extends JFrame {
         groupAddButton = new JButton();
         groupDeleteButton = new JButton();
         groupEditButton = new JButton();
-        groupSearchButton = new JButton();
         scrollPane4 = new JScrollPane();
         groupsTable = new JTable();
         subjectsPanel = new JPanel();
@@ -298,14 +292,12 @@ public class MainFrame extends JFrame {
         subjectAddButton = new JButton();
         subjectDeleteButton = new JButton();
         subjectEditButton = new JButton();
-        subjectSearchButton = new JButton();
         scrollPane2 = new JScrollPane();
         subjectsTable = new JTable();
         studentsPanel = new JPanel();
         panel1 = new JPanel();
         studentAddButton = new JButton();
         studentDeleteButton = new JButton();
-        studentSearchButton = new JButton();
         studentEditButton = new JButton();
         scrollPane3 = new JScrollPane();
         studentsTable = new JTable();
@@ -367,10 +359,6 @@ public class MainFrame extends JFrame {
                     groupEditButton.setText("Edit");
                     groupEditButton.addActionListener(e -> groupEdit(e));
 
-                    //---- groupSearchButton ----
-                    groupSearchButton.setText("Search");
-                    groupSearchButton.addActionListener(e -> groupSearch(e));
-
                     GroupLayout panel3Layout = new GroupLayout(panel3);
                     panel3.setLayout(panel3Layout);
                     panel3Layout.setHorizontalGroup(
@@ -380,9 +368,7 @@ public class MainFrame extends JFrame {
                                 .addComponent(groupAddButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(groupDeleteButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                                .addComponent(groupSearchButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                                 .addComponent(groupEditButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                     );
@@ -393,9 +379,8 @@ public class MainFrame extends JFrame {
                                 .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(groupAddButton)
                                     .addComponent(groupDeleteButton)
-                                    .addComponent(groupEditButton)
-                                    .addComponent(groupSearchButton, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(16, Short.MAX_VALUE))
+                                    .addComponent(groupEditButton))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     );
                 }
 
@@ -421,7 +406,7 @@ public class MainFrame extends JFrame {
                             .addContainerGap()
                             .addComponent(panel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(scrollPane4, GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(scrollPane4, GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                             .addContainerGap())
                 );
             }
@@ -445,10 +430,6 @@ public class MainFrame extends JFrame {
                     subjectEditButton.setText("Edit");
                     subjectEditButton.addActionListener(e -> subjectEdit(e));
 
-                    //---- subjectSearchButton ----
-                    subjectSearchButton.setText("Search");
-                    subjectSearchButton.addActionListener(e -> subjectSearch(e));
-
                     GroupLayout panel2Layout = new GroupLayout(panel2);
                     panel2.setLayout(panel2Layout);
                     panel2Layout.setHorizontalGroup(
@@ -458,9 +439,7 @@ public class MainFrame extends JFrame {
                                 .addComponent(subjectAddButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(subjectDeleteButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                                .addComponent(subjectSearchButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                                 .addComponent(subjectEditButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                     );
@@ -471,10 +450,9 @@ public class MainFrame extends JFrame {
                                 .addGroup(panel2Layout.createParallelGroup()
                                     .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(subjectDeleteButton)
-                                        .addComponent(subjectEditButton)
-                                        .addComponent(subjectSearchButton))
+                                        .addComponent(subjectEditButton))
                                     .addComponent(subjectAddButton))
-                                .addContainerGap(16, Short.MAX_VALUE))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     );
                 }
 
@@ -501,7 +479,7 @@ public class MainFrame extends JFrame {
                             .addContainerGap()
                             .addComponent(panel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
+                            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))
                 );
             }
             tabbedPane1.addTab("Subjects", subjectsPanel);
@@ -520,10 +498,6 @@ public class MainFrame extends JFrame {
                     studentDeleteButton.setText("Delete");
                     studentDeleteButton.addActionListener(e -> studentDelete(e));
 
-                    //---- studentSearchButton ----
-                    studentSearchButton.setText("Search");
-                    studentSearchButton.addActionListener(e -> studentSearch(e));
-
                     //---- studentEditButton ----
                     studentEditButton.setText("Edit");
                     studentEditButton.addActionListener(e -> studentEdit(e));
@@ -537,9 +511,7 @@ public class MainFrame extends JFrame {
                                 .addComponent(studentAddButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(studentDeleteButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                                .addComponent(studentSearchButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                                 .addComponent(studentEditButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                     );
@@ -550,9 +522,8 @@ public class MainFrame extends JFrame {
                                 .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(studentAddButton)
                                     .addComponent(studentDeleteButton)
-                                    .addComponent(studentEditButton)
-                                    .addComponent(studentSearchButton))
-                                .addContainerGap(31, Short.MAX_VALUE))
+                                    .addComponent(studentEditButton))
+                                .addContainerGap(26, Short.MAX_VALUE))
                     );
                 }
 
@@ -578,7 +549,7 @@ public class MainFrame extends JFrame {
                             .addContainerGap()
                             .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(17, 17, 17)
-                            .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
+                            .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
                 );
             }
             tabbedPane1.addTab("Students", studentsPanel);
@@ -590,7 +561,7 @@ public class MainFrame extends JFrame {
             contentPaneLayout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(tabbedPane1, GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
+                    .addComponent(tabbedPane1))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -617,7 +588,6 @@ public class MainFrame extends JFrame {
     private JButton groupAddButton;
     private JButton groupDeleteButton;
     private JButton groupEditButton;
-    private JButton groupSearchButton;
     private JScrollPane scrollPane4;
     private JTable groupsTable;
     private JPanel subjectsPanel;
@@ -625,14 +595,12 @@ public class MainFrame extends JFrame {
     private JButton subjectAddButton;
     private JButton subjectDeleteButton;
     private JButton subjectEditButton;
-    private JButton subjectSearchButton;
     private JScrollPane scrollPane2;
     private JTable subjectsTable;
     private JPanel studentsPanel;
     private JPanel panel1;
     private JButton studentAddButton;
     private JButton studentDeleteButton;
-    private JButton studentSearchButton;
     private JButton studentEditButton;
     private JScrollPane scrollPane3;
     private JTable studentsTable;

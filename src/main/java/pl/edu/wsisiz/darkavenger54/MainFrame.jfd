@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq t {space :::p, comp tabbedPane1::::648:x}}"
+			"$horizontalGroup": "par l {seq t {space :::p, comp tabbedPane1:::::x}}"
 			"$verticalGroup": "par l {seq l {space :::p, comp tabbedPane1:::p:353:p, space ::3:x}}"
 		} ) {
 			name: "this"
@@ -13,12 +13,12 @@ new FormModel {
 				name: "tabbedPane1"
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 					"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane4::::623:x, comp panel3:::::x}, space :::p}}"
-					"$verticalGroup": "par l {seq l {space :::p, comp panel3:::p::p, space :::p, comp scrollPane4::::247:x, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp panel3:::p::p, space :::p, comp scrollPane4::::252:x, space :::p}}"
 				} ) {
 					name: "groupsPanel"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :::p, comp groupAddButton:::p:105:p, space :::p, comp groupDeleteButton:::p:105:p, space ::171:x, comp groupSearchButton:::p:105:p, space :::p, comp groupEditButton:::p:105:p, space :::p}}"
-						"$verticalGroup": "par l {seq l {space :::p, par b {comp groupAddButton::b:p::p, comp groupDeleteButton::b:p::p, comp groupEditButton::b:p::p, comp groupSearchButton::b:p:23:p}, space ::16:x}}"
+						"$horizontalGroup": "par l {seq l {space :::p, comp groupAddButton:::p:105:p, space :::p, comp groupDeleteButton:::p:105:p, space ::282:x, comp groupEditButton:::p:105:p, space :::p}}"
+						"$verticalGroup": "par l {seq l {space :::p, par b {comp groupAddButton::b:p::p, comp groupDeleteButton::b:p::p, comp groupEditButton::b:p::p}, space :::x}}"
 					} ) {
 						name: "panel3"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -36,11 +36,6 @@ new FormModel {
 							"text": "Edit"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "groupEdit", true ) )
 						} )
-						add( new FormComponent( "javax.swing.JButton" ) {
-							name: "groupSearchButton"
-							"text": "Search"
-							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "groupSearch", true ) )
-						} )
 					} )
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 						name: "scrollPane4"
@@ -53,12 +48,12 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 					"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane2::::633:x, seq {comp panel2:::::x, space :::p}}}}"
-					"$verticalGroup": "par l {seq l {space :::p, comp panel2:::p::p, space :::p, comp scrollPane2::::258:x}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp panel2:::p::p, space :::p, comp scrollPane2::::263:x}}"
 				} ) {
 					name: "subjectsPanel"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:10:p, comp subjectAddButton:::p:105:p, space :::p, comp subjectDeleteButton:::p:105:p, space ::171:x, comp subjectSearchButton:::p:105:p, space :::p, comp subjectEditButton:::p:105:p, space :::p}}"
-						"$verticalGroup": "par l {seq {space :::p, par l {par b:l {comp subjectDeleteButton::b:p::p, comp subjectEditButton::b:p::p, comp subjectSearchButton::b:p::p}, comp subjectAddButton::l:p::p}, space ::16:x}}"
+						"$horizontalGroup": "par l {seq l {space :p:10:p, comp subjectAddButton:::p:105:p, space :::p, comp subjectDeleteButton:::p:105:p, space ::282:x, comp subjectEditButton:::p:105:p, space :::p}}"
+						"$verticalGroup": "par l {seq {space :::p, par l {par b:l {comp subjectDeleteButton::b:p::p, comp subjectEditButton::b:p::p}, comp subjectAddButton::l:p::p}, space :::x}}"
 					} ) {
 						name: "panel2"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -76,11 +71,6 @@ new FormModel {
 							"text": "Edit"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "subjectEdit", true ) )
 						} )
-						add( new FormComponent( "javax.swing.JButton" ) {
-							name: "subjectSearchButton"
-							"text": "Search"
-							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "subjectSearch", true ) )
-						} )
 					} )
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 						name: "scrollPane2"
@@ -93,12 +83,12 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 					"$horizontalGroup": "par l {seq {space :::p, par l {comp panel1:::::x, comp scrollPane3::l::623:x}, space :::p}}"
-					"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :p:17:p, comp scrollPane3::::232:x}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :p:17:p, comp scrollPane3::::237:x}}"
 				} ) {
 					name: "studentsPanel"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :::p, comp studentAddButton:::p:105:p, space :::p, comp studentDeleteButton:::p:105:p, space ::171:x, comp studentSearchButton:::p:105:p, space :::p, comp studentEditButton:::p:105:p, space :::p}}"
-						"$verticalGroup": "par l {seq l {space :::p, par b {comp studentAddButton::b:p::p, comp studentDeleteButton::b:p::p, comp studentEditButton::b:p::p, comp studentSearchButton::b:p::p}, space ::31:x}}"
+						"$horizontalGroup": "par l {seq l {space :::p, comp studentAddButton:::p:105:p, space :::p, comp studentDeleteButton:::p:105:p, space ::282:x, comp studentEditButton:::p:105:p, space :::p}}"
+						"$verticalGroup": "par l {seq l {space :::p, par b {comp studentAddButton::b:p::p, comp studentDeleteButton::b:p::p, comp studentEditButton::b:p::p}, space ::26:x}}"
 					} ) {
 						name: "panel1"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -110,11 +100,6 @@ new FormModel {
 							name: "studentDeleteButton"
 							"text": "Delete"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "studentDelete", true ) )
-						} )
-						add( new FormComponent( "javax.swing.JButton" ) {
-							name: "studentSearchButton"
-							"text": "Search"
-							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "studentSearch", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "studentEditButton"

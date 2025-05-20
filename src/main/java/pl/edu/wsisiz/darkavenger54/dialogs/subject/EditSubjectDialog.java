@@ -129,7 +129,7 @@ public class EditSubjectDialog extends JDialog {
             Student student = studentRecord.findStudentByAlbum(album);
             if (student != null) {
                 subject.removeStudent(student);
-                student.getSubjects().remove(subject); // если `student` содержит список предметов
+                student.getSubjects().remove(subject);
                 updateDialog();
             } else {
                 JOptionPane.showMessageDialog(this, "Selected student not found.", "Error", JOptionPane.ERROR_MESSAGE);
