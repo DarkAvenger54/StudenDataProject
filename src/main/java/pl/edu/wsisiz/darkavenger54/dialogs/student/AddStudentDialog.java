@@ -31,7 +31,7 @@ public class AddStudentDialog extends JDialog {
         {
             this.sname = nameTextField.getText();
             this.surname = surnameTextField.getText();
-            this.album = albumTextField.getText();
+            this.album = albumTextField.getText().toLowerCase();
             this.isConfirmed = true;
             this.setVisible(false);
         }

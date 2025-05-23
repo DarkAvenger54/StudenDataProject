@@ -1,5 +1,7 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import java.util.List;
 public class SubjectRecord
 {
     /** The list of subjects in the record. */
+    @Expose
     private List<Subject> subjects;
 
     /**
@@ -48,7 +51,7 @@ public class SubjectRecord
      */
     public Subject findSubjectBySubjectName(String subjectName)
     {
-        return subjects.stream()
+        return subjects.parallelStream()
                 .filter(s -> s.getSubjectName().equals(subjectName))
                 .findFirst()
                 .orElse(null);

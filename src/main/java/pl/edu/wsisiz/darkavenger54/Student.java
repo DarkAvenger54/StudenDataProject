@@ -1,5 +1,7 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +11,15 @@ import java.util.List;
 public class Student
 {
     /** The student's first name. */
+    @Expose
     private String name;
 
     /** The student's surname. */
+    @Expose
     private String surname;
 
     /** The student's album (student ID) number. */
+    @Expose
     private String albumNumber;
 
     /** The group to which the student belongs. */
@@ -23,6 +28,10 @@ public class Student
     /** A list of subjects the student is enrolled in. */
     private List<Subject> subjects;
 
+    public Student()
+    {
+        this.subjects = new ArrayList<>();
+    }
     /**
      * Constructs a new student with the specified name, surname, and album number.
      *

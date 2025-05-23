@@ -27,7 +27,7 @@ public class AddGroupDialog extends JDialog {
     private void ok(ActionEvent e) {
         if(!groupIDTextField.getText().isEmpty() && !specializationTextField.getText().isEmpty() && !descriptionTextPane.getText().isEmpty())
         {
-            this.groupID = groupIDTextField.getText();
+            this.groupID = groupIDTextField.getText().toLowerCase();
             this.specialization = specializationTextField.getText();
             this.description = descriptionTextPane.getText();
             this.confirmed = true;

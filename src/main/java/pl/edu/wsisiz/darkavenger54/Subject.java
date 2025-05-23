@@ -1,5 +1,7 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,9 +13,11 @@ import java.util.Map;
 public class Subject
 {
     /** The name of the subject. */
+    @Expose
     private String subjectName;
 
     /** A map of topic names to their maximum possible grades. */
+    @Expose
     private Map<String, Integer> subjectTopics;
 
     /** A nested map of student album numbers to their grades for each topic. */
@@ -25,6 +29,10 @@ public class Subject
     /** The sum of maximum points across all topics (cannot exceed 100). */
     private int currentPoints;
 
+    public Subject()
+    {
+        this.students = new ArrayList<>();
+    }
     /**
      * Constructs a new subject with the specified name.
      *

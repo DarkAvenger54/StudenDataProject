@@ -35,6 +35,11 @@ public class EditGroupDialog extends JDialog {
         studentsTableModel.addColumn("Surname");
         studentsTableModel.addColumn("Album");
         studentTable.setModel(studentsTableModel);
+        if (group == null) {
+            JOptionPane.showMessageDialog(this, "Brak danych grupy.", "Błąd", JOptionPane.ERROR_MESSAGE);
+            dispose();
+            return;
+        }
         updateDialog();
         setVisible(true);
     }

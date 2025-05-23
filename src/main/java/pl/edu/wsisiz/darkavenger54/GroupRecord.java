@@ -1,5 +1,7 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import java.util.List;
 public class GroupRecord
 {
     /** The list of all groups in the record. */
+    @Expose
     private List<Group> groups;
 
     /**
@@ -48,8 +51,8 @@ public class GroupRecord
      */
     public Group findGroupByGroupId(String groupId)
     {
-        return groups.stream()
-                .filter(group -> group.getGroupID().equals(groupId))
+        return groups.parallelStream()
+                .filter(group -> group.getGroupID().equals(groupId.toLowerCase()))
                 .findFirst()
                 .orElse(null);
     }

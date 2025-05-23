@@ -12,10 +12,16 @@ import pl.edu.wsisiz.darkavenger54.dialogs.subject.AddSubjectDialog;
 import pl.edu.wsisiz.darkavenger54.dialogs.subject.EditSubjectDialog;
 
 import java.awt.event.*;
+import java.io.*;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class MainFrame extends JFrame {
     private StudentRecord studentRecord;
@@ -25,6 +31,8 @@ public class MainFrame extends JFrame {
     private DefaultTableModel groupsTableModel;
     private DefaultTableModel subjectsTableModel;
     private DefaultTableModel studentsTableModel;
+
+    private final ExecutorService executor = Executors.newFixedThreadPool(3);
 
     public MainFrame() {
         try {
@@ -79,26 +87,56 @@ public class MainFrame extends JFrame {
         }
         update();
     }
-    private void update()
-    {
+    //wielo
+    private void update() {
         studentsTableModel.setRowCount(0);
         subjectsTableModel.setRowCount(0);
         groupsTableModel.setRowCount(0);
-        List<Student> students = studentRecord.getStudents();
-        List<Subject> subjects = subjectRecord.getSubjects();
-        List<Group> groups = groupRecord.getGroups();
-        for(Student student : students)
-        {
-            studentsTableModel.addRow(new Object[]{student.getName(), student.getSurname(), student.getAlbumNumber()});
-        }
-        for(Subject subject : subjects)
-        {
-            subjectsTableModel.addRow(new Object[]{subject.getSubjectName()});
-        }
-        for(Group group : groups)
-        {
-            groupsTableModel.addRow(new Object[]{group.getGroupID()});
-        }
+
+        Future<List<Student>> studentsFuture = executor.submit(() -> studentRecord.getStudents());
+        Future<List<Subject>> subjectsFuture = executor.submit(() -> subjectRecord.getSubjects());
+        Future<List<Group>> groupsFuture = executor.submit(() -> groupRecord.getGroups());
+
+        executor.execute(() -> {
+            try {
+                List<Student> students = studentsFuture.get();
+                SwingUtilities.invokeLater(() -> {
+                    for (Student student : students) {
+                        studentsTableModel.addRow(new Object[]{
+                                student.getName(), student.getSurname(), student.getAlbumNumber()
+                        });
+                    }
+                });
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
+
+        executor.execute(() -> {
+            try {
+                List<Subject> subjects = subjectsFuture.get();
+                SwingUtilities.invokeLater(() -> {
+                    for (Subject subject : subjects) {
+                        subjectsTableModel.addRow(new Object[]{subject.getSubjectName()});
+                    }
+                });
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
+
+        executor.execute(() -> {
+            try {
+                List<Group> groups = groupsFuture.get();
+                SwingUtilities.invokeLater(() -> {
+                    for (Group group : groups) {
+                        groupsTableModel.addRow(new Object[]{group.getGroupID()});
+                    }
+                });
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        });
     }
 
     private void about(ActionEvent e) {
@@ -106,11 +144,52 @@ public class MainFrame extends JFrame {
     }
 
     private void open(ActionEvent e) {
-        // TODO add your code here
+        Gson gson = new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                .serializeNulls()
+                .create();
+
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+
+            try (DataInputStream dis = new DataInputStream(new FileInputStream(file))) {
+                String json = dis.readUTF();
+                CombinedRecord combined = gson.fromJson(json, CombinedRecord.class);
+                this.groupRecord = combined.getGroupRecord();
+                this.subjectRecord = combined.getSubjectRecord();
+                this.studentRecord = combined.getStudentRecord();
+                JOptionPane.showMessageDialog(null, "Wczytano dane z pliku.");
+                update();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Błąd odczytu: " + ex.getMessage());
+            }
+        }
     }
 
     private void save(ActionEvent e) {
-        // TODO add your code here
+        CombinedRecord combinedRecord = new CombinedRecord(groupRecord, subjectRecord, studentRecord);
+        Gson gson = new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                .serializeNulls()
+                .create();
+
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showSaveDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+
+            try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(file))) {
+                String json = gson.toJson(combinedRecord);
+                dos.writeUTF(json);
+                JOptionPane.showMessageDialog(null, "Zapisano do pliku.");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Błąd zapisu: " + ex.getMessage());
+            }
+        }
     }
 
     private void groupAdd(ActionEvent e) {

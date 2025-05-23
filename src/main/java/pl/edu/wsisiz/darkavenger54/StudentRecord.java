@@ -1,9 +1,11 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
+
 
 /**
  * Represents a record of students.
@@ -11,7 +13,9 @@ import java.util.stream.Collectors;
  */
 public class StudentRecord
 {
+
     /** The list of students in the record. */
+    @Expose
     private List<Student> students;
 
     /**
@@ -62,27 +66,16 @@ public class StudentRecord
     }
 
     /**
-     * Finds all students with the given name (case-insensitive).
-     *
-     * @param name the name to search for
-     * @return a list of matching students
-     */
-    public List<Student> findStudentsByName(String name) {
-        return students.stream()
-                .filter(s -> s.getName().equalsIgnoreCase(name))
-                .collect(Collectors.toList());
-    }
-
-    /**
      * Finds a student by their album number (case-insensitive).
      *
      * @param album the album number to search for
      * @return the matching student, or {@code null} if not found
      */
+
     public Student findStudentByAlbum(String album)
     {
-        return students.stream()
-                .filter(s -> s.getAlbumNumber().equalsIgnoreCase(album))
+        return students.parallelStream()
+                .filter(s -> s.getAlbumNumber().equalsIgnoreCase(album.toLowerCase()))
                 .findFirst()
                 .orElse(null);
     }

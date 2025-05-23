@@ -28,15 +28,6 @@ class StudentRecordTest {
         assertNull(repo.findStudentByAlbum("X999"));
     }
 
-    @Test
-    void findStudentsByName() {
-        repo.addStudent(new Student("Anna", "Smith", "001"));
-        repo.addStudent(new Student("Anna", "Johnson", "002"));
-        repo.addStudent(new Student("Bob", "Brown", "003"));
-
-        List<Student> list = repo.findStudentsByName("Anna");
-        assertEquals(2, list.size());
-    }
 
     @Test
     void removeStudent() {

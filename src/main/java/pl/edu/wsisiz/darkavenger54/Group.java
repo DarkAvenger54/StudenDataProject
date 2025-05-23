@@ -1,5 +1,7 @@
 package pl.edu.wsisiz.darkavenger54;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,17 +12,23 @@ import java.util.List;
 public class Group
 {
     /** The unique identifier for the group. */
+    @Expose
     private String GroupID;
 
     /** The specialization of the group. */
+    @Expose
     private String specialization;
 
     /** A textual description of the group. */
+    @Expose
     private String description;
 
     /** A list of students in the group. */
     private List<Student> students;
 
+    public Group() {
+        this.students = new ArrayList<>();
+    }
     /**
      * Constructs a new Group with the given ID, specialization, and description.
      *
@@ -28,6 +36,7 @@ public class Group
      * @param specialization the specialization of the group
      * @param description   a brief description of the group
      */
+
     public Group(String GroupID, String specialization, String description)
     {
         this.GroupID = GroupID;
